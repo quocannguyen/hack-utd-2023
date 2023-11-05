@@ -51,4 +51,4 @@ if not hasattr(st, 'already_started_server'):
         analysis = generate_analysis(date, open, high, low, volume, predicted_close, predicted_return, mean_sentiment)
         return analysis
 
-    app.run(debug=True, port=5000)
+    app.run(threaded=True, port=5000)
