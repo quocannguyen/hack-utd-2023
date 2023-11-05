@@ -1,3 +1,6 @@
+import nltk
+nltk.download("vader_lexicon")
+
 import pandas as pd
 from newsapi import NewsApiClient
 from datetime import timedelta, datetime
