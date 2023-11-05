@@ -21,7 +21,7 @@ if not hasattr(st, 'already_started_server'):
     load_dotenv(".env")
     app = Flask(__name__)
     cors = CORS(app)
-    app.config.from_pyfile("streamlit\\pages\\functions\\settings.py")
+    app.config.from_pyfile("functions/settings.py")
 
     app = Flask(__name__)
 
