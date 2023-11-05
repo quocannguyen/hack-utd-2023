@@ -39,7 +39,7 @@ def analyze_symbol():
         date = date - timedelta(days=1)
         date = date.strftime("%d-%b-%Y")
         sentiment_dataframe = pd.read_json(
-            requests.post("http://127.0.0.1:5000/api/sentimentanalysis", params={
+            requests.post("http://localhost:5000/api/sentimentanalysis", params={
                 "keyword": symbol,
                 "start_date": date
             }).json())
@@ -72,7 +72,7 @@ def add_symbol_to_dataframe():
 
 def suggest_symbols():
     if budget and time_period:
-        st.session_state["suggested_symbols"] = requests.post("http://127.0.0.1:5000/api/generatesymbols", params={
+        st.session_state["suggested_symbols"] = requests.post("http://localhost:5000/api/generatesymbols", params={
             "budget": budget,
             "time_period": time_period
         }).json()

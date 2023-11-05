@@ -44,7 +44,7 @@ def analyze_symbol():
         date = date - timedelta(days=1)
         date = date.strftime("%d-%b-%Y")
         sentiment_dataframe = pd.read_json(
-            requests.post("http://127.0.0.1:5000/api/sentimentanalysis", params={
+            requests.post("http://localhost:5000/api/sentimentanalysis", params={
                 "keyword": symbol,
                 "start_date": date
             }).json())
@@ -75,7 +75,7 @@ def analyze_symbol():
         st.text("Mean Sentiment Score: " + str(mean_sentiment))
 
         st.header("AI Generated Analysis")
-        analysis = requests.post("http://127.0.0.1:5000/api/generateanalysis", params={
+        analysis = requests.post("http://localhost:5000/api/generateanalysis", params={
             "date": date,
             "open": open_predict,
             "high": x_predict["High"][0],
