@@ -1,16 +1,17 @@
-import openai
-from .settings import OPENAI_API_KEY
+# import openai
+# from .settings import OPENAI_API_KEY
 
-openai.api_key = OPENAI_API_KEY
+# openai.api_key = OPENAI_API_KEY
 
 def generate_message(prompt):
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "user", "content": prompt}
-        ]
-    )
-    return completion.choices[0].message["content"]
+    # completion = openai.ChatCompletion.create(
+    #     model="gpt-3.5-turbo",
+    #     messages=[
+    #         {"role": "user", "content": prompt}
+    #     ]
+    # )
+    # return completion.choices[0].message["content"]
+    return "Sorry, OpenAI API Key is not free for me"
 
 def generate_symbols(budget, time_period):
     prompt = "Give me a comma delimited list of stock symbol, without a dot (\".\") in its symbol, affordable to the budget of $" + budget + " every " + time_period + ", to your knowledge, without anything else. Do not give me additional words."
